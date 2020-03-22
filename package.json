@@ -2,7 +2,7 @@
   "name": "neu-axentix",
   "version": "0.1.0",
   "description": "Neu-Axentix is the first front end framework based on neumorphism using CSS and JS. Start creating your website using neumorphic design.",
-  "homepage": "https://useaxentix.com",
+  "homepage": "https://neu.useaxentix.com",
   "author": "Axel SIMONET, Vincent LEVEQUE",
   "license": "MIT",
   "scripts": {
@@ -59,5 +59,7 @@
     "gulp-sass": "^4.0.2",
     "sass": "^1.25.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "axentix": "^0.5.2"
+  }
 }
