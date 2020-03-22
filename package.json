@@ -1,0 +1,63 @@
+{
+  "name": "neu-axentix",
+  "version": "0.1.0",
+  "description": "Neu-Axentix is the first front end framework based on neumorphism using CSS and JS. Start creating your website using neumorphic design.",
+  "homepage": "https://useaxentix.com",
+  "author": "Axel SIMONET, Vincent LEVEQUE",
+  "license": "MIT",
+  "scripts": {
+    "build:js": "gulp js",
+    "build:js-min": "gulp jsmin",
+    "build:sass-min": "gulp sassmin",
+    "build:sass": "gulp sass",
+    "build": "gulp",
+    "watch": "gulp watch"
+  },
+  "keywords": [
+    "framework",
+    "neumophic",
+    "neu-axentix",
+    "axentix",
+    "neumorphism",
+    "front-end",
+    "responsive",
+    "css",
+    "js",
+    "sass",
+    "web"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:axentix/neumorphic.git"
+  },
+  "bugs": {
+    "url": "https://github.com/axentix/neumorphic/issues"
+  },
+  "style": "dist/css/neu-axentix.css",
+  "sass": "src/scss/neu-axentix.scss",
+  "main": "dist/js/neu-axentix.js",
+  "files": [
+    "dist",
+    "src",
+    "gulpfile.js",
+    "LICENSE",
+    "README",
+    "CHANGELOG"
+  ],
+  "engine": "node >= 10",
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "browser-sync": "^2.26.7",
+    "fibers": "^4.0.2",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-babel-minify": "^0.5.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "sass": "^1.25.0"
+  },
+  "dependencies": {}
+}

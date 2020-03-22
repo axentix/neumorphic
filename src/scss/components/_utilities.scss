@@ -1,0 +1,11 @@
+.neu-transition {
+  transition-property: background-color, box-shadow;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+}
+
+.neu-transition-color {
+  transition-property: background-color, box-shadow, color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+}

@@ -1,0 +1,81 @@
+@each $name, $value in $theme-colors {
+  .neu-#{$name} {
+    background-color: $value;
+    color: txtColor($value);
+
+    .neu-flat {
+      background-color: $value;
+      box-shadow: 5px 5px 10px darken($value, 8%), -5px -5px 10px lighten($value, 8%);
+
+      &.neu-small {
+        box-shadow: 2px 2px 10px darken($value, 12.5%), -2px -2px 10px lighten($value, 10%);
+      }
+
+      &.neu-large {
+        box-shadow: 12px 12px 24px darken($value, 8%), -12px -12px 24px lighten($value, 8%);
+      }
+    }
+
+    .neu-pressed {
+      background-color: $value;
+      box-shadow: inset 5px 5px 10px darken($value, 8%), inset -5px -5px 10px lighten($value, 6%);
+
+      &.neu-small {
+        box-shadow: inset 2px 2px 10px darken($value, 10%), inset -2px -2px 10px lighten($value, 7%);
+      }
+
+      &.neu-large {
+        box-shadow: inset 8px 8px 20px darken($value, 8%), inset -8px -8px 20px lighten($value, 6%);
+      }
+    }
+
+    .neu-convex {
+      background: linear-gradient(145deg, lighten($value, 7%), darken($value, 6%));
+      box-shadow: 5px 5px 10px darken($value, 8%), -5px -5px 10px lighten($value, 6%);
+
+      &.neu-small {
+        background: linear-gradient(145deg, lighten($value, 7%), darken($value, 6%));
+        box-shadow: 2px 2px 10px darken($value, 10%), -2px -2px 10px lighten($value, 7%);
+      }
+
+      &.neu-large {
+        background: linear-gradient(145deg, lighten($value, 7%), darken($value, 6%));
+        box-shadow: 8px 8px 16px darken($value, 8%), -8px -8px 16px lighten($value, 7%);
+      }
+    }
+
+    .neu-concave {
+      background: linear-gradient(145deg, darken($value, 6%), lighten($value, 6%));
+      box-shadow: 5px 5px 10px darken($value, 8%), -5px -5px 10px lighten($value, 6%);
+
+      &.neu-small {
+        background: linear-gradient(145deg, darken($value, 6%), lighten($value, 6%));
+        box-shadow: 2px 2px 10px darken($value, 10%), -2px -2px 10px lighten($value, 7%);
+      }
+
+      &.neu-large {
+        background: linear-gradient(145deg, darken($value, 6%), lighten($value, 6%));
+        box-shadow: 8px 8px 14px darken($value, 8%), -8px -8px 14px lighten($value, 7%);
+      }
+    }
+
+    .neu-bordered {
+      background-color: $value;
+      border: solid 2px transparent;
+      box-shadow: inset 5px 5px 10px darken($value, 8%), inset -5px -5px 10px lighten($value, 6%),
+        5px 5px 10px darken($value, 8%), -5px -5px 10px lighten($value, 6%);
+
+      &.neu-small {
+        border: solid thin transparent;
+        box-shadow: inset 2px 2px 10px darken($value, 10%), inset -2px -2px 10px lighten($value, 7%),
+          2px 2px 10px darken($value, 10%), -2px -2px 10px lighten($value, 7%);
+      }
+
+      &.neu-large {
+        border: solid 4px transparent;
+        box-shadow: inset 8px 8px 20px darken($value, 8%), inset -8px -8px 20px lighten($value, 7%),
+          8px 8px 20px darken($value, 8%), -8px -8px 20px lighten($value, 7%);
+      }
+    }
+  }
+}

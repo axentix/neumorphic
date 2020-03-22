@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Axentix Layout - Fixed sidenav</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../dist/css/axentix.min.css" />
+    <style>
+      .form-material .form-field:not(.form-default) {
+        --form-material-color: #c91d34;
+      }
+      .form-switch .slider {
+        --form-switch-active-color: #c91d34;
+      }
+    </style>
+  </head>
+
+  <body class="layout with-sidenav fixed-sidenav">
+    <header>
+      <div class="navbar-fixed">
+        <nav class="navbar primary">
+          <a href="#" target="_blank" class="navbar-brand">Axentix</a>
+          <ul class="navbar-menu ml-auto">
+            <li><a class="navbar-link" href="#">Link 1</a></li>
+            <li><a class="navbar-link" href="#">Link 2</a></li>
+            <li><a class="navbar-link" href="#">Link 3</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div id="example-sidenav" class="sidenav large fixed white">
+      <div class="sidenav-header">
+        <button data-target="example-sidenav" class="sidenav-trigger"><i class="fas fa-times"></i></button>
+        <img class="logo dropshadow-1" src="https://axentix-web.test/img/axentix-250.png" alt="Logo" />
+      </div>
+      <a href="#" class="sidenav-link active">Link 1</a>
+      <a href="#" class="sidenav-link">Link 2</a>
+      <a href="#" class="sidenav-link">Link 3</a>
+      <a href="#" class="sidenav-link">Link 4</a>
+      <div class="sidenav-footer viride">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </div>
+    </div>
+
+    <main>
+      <button data-target="example-sidenav" class="btn press amaranth dark-1 sidenav-trigger">
+        Open sidenav
+      </button>
+      <form class="container form-material">
+        <div class="grix xs1 sm2">
+          <div class="form-field form-rtl">
+            <input type="text" id="name" class="form-control" />
+            <label for="name">Name</label>
+          </div>
+          <div class="form-field">
+            <input type="date" id="date" class="form-control" />
+            <label for="date">Date</label>
+          </div>
+          <div class="form-field col-sm2">
+            <input type="email" id="email" class="form-control" placeholder="contact@example.com" />
+            <label for="email">Email</label>
+          </div>
+          <div class="form-field col-sm2">
+            <input type="text" id="subject" class="form-control" disabled placeholder="Disabled input" />
+            <label for="subject">Subject</label>
+          </div>
+          <div class="form-field col-sm2">
+            <input type="text" id="address" class="form-control" />
+            <label for="address">Address</label>
+            <span class="form-helper txt-center">You can click but not edit in readonly mode.</span>
+          </div>
+          <div class="form-field col-sm2">
+            <label for="textarea">A textarea</label>
+            <textarea id="textarea" class="form-control"></textarea>
+          </div>
+          <div class="form-field inline form-default">
+            <label for="inline">inline</label>
+            <input type="text" id="inline" class="form-control" />
+          </div>
+          <div class="form-field inline form-default">
+            <label for="inline2">inline2</label>
+            <input type="text" id="inline2" class="form-control" />
+          </div>
+          <div class="form-field">
+            <label class="form-check">
+              <input type="radio" checked="true" name="yon" />
+              <span>Yes</span>
+            </label>
+            <label class="form-check">
+              <input type="radio" name="yon" />
+              <span>No</span>
+            </label>
+            <label class="form-check">
+              <input type="radio" name="yon" />
+              <span>Maybe</span>
+            </label>
+          </div>
+          <div class="form-field">
+            <label class="form-check">
+              <input type="checkbox" disabled value="check" id="checkbox" />
+              <span>Checkbox</span>
+            </label>
+          </div>
+          <div class="form-field form-default">
+            <label class="form-switch mt-2">
+              dd
+              <input type="checkbox" />
+              <span class="slider small"></span>
+              Cc
+            </label>
+            <label class="form-switch mt-2">
+              <input type="checkbox" checked />
+              <span class="slider small"></span>
+            </label>
+            <label class="form-switch mt-2">
+              dd
+              <input type="checkbox" />
+              <span class="slider"></span>
+              Cc
+            </label>
+            <label class="form-switch mt-2">
+              <input type="checkbox" checked />
+              <span class="slider"></span>
+            </label>
+            <label class="form-switch mt-2">
+              dd
+              <input type="checkbox" />
+              <span class="slider large"></span>
+              Cc
+            </label>
+            <label class="form-switch mt-2">
+              <input type="checkbox" checked />
+              <span class="slider large"></span>
+            </label>
+          </div>
+          <div class="form-field form-default">
+            <label class="form-switch mt-2">
+              dd
+              <input type="checkbox" />
+              <span class="slider small thin"></span>
+              Cc
+            </label>
+            <label class="form-switch mt-2">
+              <input type="checkbox" checked />
+              <span class="slider small thin"></span>
+            </label>
+            <label class="form-switch mt-2">
+              dd
+              <input type="checkbox" />
+              <span class="slider thin"></span>
+              Cc
+            </label>
+            <label class="form-switch mt-2">
+              <input type="checkbox" checked />
+              <span class="slider thin"></span>
+            </label>
+            <label class="form-switch mt-2">
+              dd
+              <input type="checkbox" />
+              <span class="slider large thin"></span>
+              Cc
+            </label>
+            <label class="form-switch mt-2">
+              <input type="checkbox" checked />
+              <span class="slider large thin"></span>
+            </label>
+          </div>
+          <div class="form-field">
+            <label class="txt-center" for="select">Select an option</label>
+            <select class="form-control" id="select">
+              <option>plage</option>
+              <option>2</option>
+              <option>3</option>
+            </select>
+          </div>
+          <div class="form-field form-default">
+            <label class="txt-center" for="multiple-select">Choose one or more option</label>
+            <select class="form-control" multiple id="multiple-select">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn press secondary" type="reset">Reset me</button>
+      </form>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit architecto eaque dolor illum veritatis
+      tenetur amet explicabo? Nam sunt, blanditiis eum neque repellat inventore quae soluta placeat,
+      voluptatum architecto doloribus! Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
+      nihil totam ratione alias laborum ducimus quibusdam. Eveniet quo reprehenderit dolorum, quaerat, dolore
+      ipsa similique nostrum inventore, saepe nesciunt ab deserunt.
+    </main>
+
+    <footer class="footer primary">
+      Copyright © 2019 - Example
+    </footer>
+    <script src="../dist/js/axentix.min.js"></script>
+    <script>
+      var sidenav = new Sidenav('#example-sidenav');
+    </script>
+  </body>
+</html>

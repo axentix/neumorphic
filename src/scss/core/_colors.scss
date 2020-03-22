@@ -1,0 +1,70 @@
+// Creating light and dark variations for all colors
+// @each $name, $value in $colors {
+//   @for $i from -5 through 4 {
+//     @if $i < 0 {
+//       .#{$name}.dark-#{abs($i)} {
+//         background-color: darken($value, abs($i) * 8%);
+//         color: txtColor(darken($value, abs($i) * 8%));
+//       }
+//       .txt-#{$name}.txt-dark-#{abs($i)} {
+//         color: darken($value, abs($i) * 8%) !important;
+//       }
+//     }
+//     @if $i == 0 {
+//       .#{$name} {
+//         background-color: #{$value};
+//         color: txtColor($value);
+//       }
+//       .txt-#{$name} {
+//         color: #{$value} !important;
+//       }
+//     }
+//     @if $i > 0 {
+//       .#{$name}.light-#{$i} {
+//         background-color: lighten($value, $i * 8%);
+//         color: txtColor(lighten($value, $i * 8%));
+//       }
+//       .txt-#{$name}.txt-light-#{$i} {
+//         color: lighten($value, $i * 8%) !important;
+//       }
+//     }
+//   }
+// }
+
+// @each $name, $value in $axentix-palette {
+//   .#{$name} {
+//     background-color: #{$value};
+//     color: txtColor($value);
+//   }
+//   .txt-#{$name} {
+//     color: #{$value} !important;
+//   }
+// }
+
+@each $name, $value in $theme-colors {
+  .neu-flat {
+    .#{$name} {
+      background: $value;
+      box-shadow: 12px 12px 50px darken($value, 12.5%), -12px -12px 50px lighten($value, $amount: 13.5%);
+    }
+  }
+  .neu-pressed {
+    .#{$name} {
+      background: #f6f6f6;
+      box-shadow: inset 12px 12px 50px darken($value, 12.5%),
+        inset -12px -12px 50px lighten($value, $amount: 13.5%);
+    }
+  }
+  .neu-convex {
+    .#{$name} {
+      background: linear-gradient(145deg, darken($value, 9.7%), lighten($value, 2%));
+      box-shadow: 12px 12px 50px darken($value, 12.5%), -12px -12px 50px lighten($value, $amount: 13.5%);
+    }
+  }
+  .neu-concave {
+    .#{$name} {
+      background: linear-gradient(145deg, lighten($value, 2%), darken($value, 9.7%));
+      box-shadow: 12px 12px 50px darken($value, 12.5%), -12px -12px 50px lighten($value, $amount: 13.5%);
+    }
+  }
+}
