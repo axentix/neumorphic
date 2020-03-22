@@ -17,7 +17,7 @@
 - Install with [npm](https://www.npmjs.com/) : `npm install neu-axentix`
 
 ## Documentation
-**SOON**
+**SOON**  
 Found the documentation at <https://neu.useaxentix.com/>.  
 You can't run the documentation locally due to future features we have planned.
 
