@@ -7,10 +7,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
     />
-    <link rel="stylesheet" href="../dist/css/axentix.min.css" />
+    <link rel="stylesheet" href="../node_modules/axentix/dist/css/axentix.min.css" />
+    <link rel="stylesheet" href="../dist/css/neu-axentix.min.css" />
   </head>
 
-  <body class="layout with-sidenav fixed-sidenav">
+  <body class="layout with-sidenav fixed-sidenav neu-light">
     <header>
       <nav class="navbar secondary">
         <a href="#" target="_blank" class="navbar-brand">Axentix</a>
@@ -74,7 +75,7 @@
       </button>
     </div>
 
-    <main>
+    <main class="mt-2">
       <!-- Code here the main content -->
       <button data-target="example-sidenav" class="btn press amaranth dark-1 sidenav-trigger">
         Open sidenav
@@ -107,9 +108,9 @@
           <button data-target="example-modal" class="mg-l-auto btn primary modal-trigger">Close</button>
         </div>
       </div>
-      <div class="card">
+      <div class="card neu-flat container">
         <div class="card-content">
-          <table class="table">
+          <table class="table neu-pressed">
             <thead>
               <tr>
                 <th>#</th>
@@ -231,7 +232,8 @@
       Copyright © 2019 - Example
       <a href="#">Hello guys</a>
     </footer>
-    <script src="../dist/js/axentix.min.js"></script>
+    <script src="../node_modules/axentix/dist/js/axentix.min.js"></script>
+    <!-- <script src="../dist/js/neu-axentix.min.js"></script> -->
     <script>
       var axentix = new Axentix('all');
       var collapsible = new Collapsible('#sidenav-collapsible3', {
