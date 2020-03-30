@@ -69,8 +69,23 @@ function setupListeners(withStateElements) {
  */
 function toggleType(el) {
   console.log(el);
-  if (el.classList.contains(el.dataset.off)) {
-    let index = findIndex(el, el.dataset.off);
-  } else if (el.classList.contains(el.dataset.on)) {
+  let classList = [...el.classList];
+
+  if (el.classList.contains('neu-' + el.dataset.off)) {
+    let index = classList.indexOf('neu-' + el.dataset.off);
+    classList.splice(index, 1, 'neu-' + el.dataset.on);
+    console.log('11111');
+  } else if (el.classList.contains('neu-' + el.dataset.on)) {
+    let index = classList.indexOf('neu-' + el.dataset.on);
+    classList.splice(index, 1, 'neu-' + el.dataset.off);
+    console.log('22222');
   }
+  console.log(classList);
+  el.className = '';
+  classList.forEach(className => {
+    el.classList.add(className);
+  });
 }
+
+// IL MANQUE LA VERIF, SI LE MEC MET 2 CLASS NEUMORPH, IL FAUT LUI EN SUPPRIMER UNE POUR QUE UNE SEULE SE METTE,
+// sinon ca va faire que quand on get la class dans le toggleType, ca change pas la bonne
