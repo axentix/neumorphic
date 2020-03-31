@@ -36,18 +36,15 @@ function toggleType() {
   const nextClass = this.dataset.neuClick;
   if (this.neuClickCurrClass) {
     this.classList.remove(this.neuClickCurrClass);
-
     this.dataset.neuClick = this.neuClickCurrClass;
-
-    if (nextClass) {
-      this.classList.add(nextClass);
-      this.neuClickCurrClass = nextClass;
-    } else {
-      this.neuClickCurrClass = '';
-    }
   } else {
-    this.classList.add(nextClass);
     this.dataset.neuClick = '';
+  }
+
+  if (nextClass) {
+    this.classList.add(nextClass);
     this.neuClickCurrClass = nextClass;
+  } else {
+    this.neuClickCurrClass = '';
   }
 }
