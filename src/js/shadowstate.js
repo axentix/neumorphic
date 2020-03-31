@@ -2,6 +2,10 @@ let withStateElements = document.querySelectorAll('[data-neu-clicked]');
 
 setup(withStateElements);
 
+/**
+ * 
+ * @param {NodeListOf<Element>} withStateElements 
+ */
 function setup(withStateElements) {
   withStateElements.forEach(el => {
     let classList = el.className.split(' ');
