@@ -3,8 +3,8 @@ let withStateElements = document.querySelectorAll('[data-neu-clicked]');
 setup(withStateElements);
 
 /**
- * 
- * @param {NodeListOf<Element>} withStateElements 
+ *
+ * @param {NodeListOf<Element>} withStateElements
  */
 function setup(withStateElements) {
   withStateElements.forEach(el => {
@@ -19,31 +19,25 @@ function setup(withStateElements) {
       el.className = newClasses.join(' ');
     }
 
-    el.defaultClass = // blblbl
+    el.toggleRef = toggleType.bind(el);
 
-    el.addEventListener('click', () => {
-      toggleType(el);
-    });
+    el.addEventListener('click', el.toggleRef);
   });
 }
 
-/**
- *
- * @param {Element} el
- */
-function toggleType(el, defaultClass) {
-  console.log(el);
-  let classList = [...el.classList];
+function toggleType() {
+  console.log(this);
+  let classList = [...this.classList];
 
-  if (el.classList.contains(el.dataset.neuClicked)) {
-    let index = classList.indexOf(el.dataset.off);
-    classList.splice(index, 1, el.dataset.neuClicked);
+  if (this.classList.contains(this.dataset.neuClicked)) {
+    let index = classList.indexOf(this.dataset.off);
+    classList.splice(index, 1, this.dataset.neuClicked);
     console.log('11111');
-  } else if (el.classList.contains('neu-' + el.dataset.on)) {
   }
+
   console.log(classList);
-  el.className = '';
-  classList.forEach(className => {
-    el.classList.add(className);
-  });
+  // this.className = '';
+  // classList.forEach(className => {
+  //   this.classList.add(className);
+  // });
 }
