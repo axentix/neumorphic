@@ -19,6 +19,7 @@ function setup(withStateElements) {
       el.className = newClasses.join(' ');
     }
 
+    el.neuClickCurrClass = neumorphClasses[0] || '';
     el.toggleRef = toggleType.bind(el);
 
     el.addEventListener('click', el.toggleRef);
@@ -26,30 +27,27 @@ function setup(withStateElements) {
 }
 
 function toggleType() {
-  console.log(this);
   const stateList = ['neu-bordered', 'neu-flat', 'neu-pressed', 'neu-concave', 'neu-convex'];
-  let classList = [...this.classList];
-
-  // if he doesn't contain the "dataset" class in his classList, but contains another neumorph class
-  // 2dn = undefined so falsy if "find()" doesn't find corresponding value
-  if (
-    !this.classList.contains(this.dataset.neuClick) &&
-    this.classList.contains(stateList.find(any => classList.some(className => any == className)))
-  ) {
-    let newClassName = classList.filter(className => stateList.includes(className)); // future dataset class
-
-    let index = classList.indexOf(newClassName);
-    classList.splice(index, 1, this.dataset.neuClick);
-    this.className = classList.join(' ');
-    this.dataset.neuClick = newClassName;
-    // else if there is no neumorph class on the element
-  } else if (!this.classList.contains(stateList.find(any => classList.some(className => any == className)))) {
-    let newClassName = 'no-basic-value'; // future dataset class
-
-    classList.push(this.dataset.neuClick);
-    this.className = classList.join(' ');
-    this.dataset.neuClick = newClassName;
+  if (this.dataset.neuClick && !stateList.includes(this.dataset.neuClick)) {
+    console.error('Error: invalid classname in data-neu-click.');
+    return;
   }
 
-  // console.log(classList);
+  const nextClass = this.dataset.neuClick;
+  if (this.neuClickCurrClass) {
+    this.classList.remove(this.neuClickCurrClass);
+
+    this.dataset.neuClick = this.neuClickCurrClass;
+
+    if (nextClass) {
+      this.classList.add(nextClass);
+      this.neuClickCurrClass = nextClass;
+    } else {
+      this.neuClickCurrClass = '';
+    }
+  } else {
+    this.classList.add(nextClass);
+    this.dataset.neuClick = '';
+    this.neuClickCurrClass = nextClass;
+  }
 }
