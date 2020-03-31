@@ -1,9 +1,8 @@
 let withStateElements = document.querySelectorAll('[data-neu-clicked]');
 
-setupClasses(withStateElements);
-setupListeners(withStateElements);
+setup(withStateElements);
 
-function setupClasses(withStateElements) {
+function setup(withStateElements) {
   withStateElements.forEach(el => {
     let classList = el.className.split(' ');
 
@@ -15,15 +14,9 @@ function setupClasses(withStateElements) {
       newClasses.push(neumorphClasses[0]);
       el.className = newClasses.join(' ');
     }
-  });
-}
 
-/**
- *
- * @param {NodeList} withStateElements
- */
-function setupListeners(withStateElements) {
-  withStateElements.forEach(el => {
+    el.defaultClass = // blblbl
+
     el.addEventListener('click', () => {
       toggleType(el);
     });
@@ -34,7 +27,7 @@ function setupListeners(withStateElements) {
  *
  * @param {Element} el
  */
-function toggleType(el) {
+function toggleType(el, defaultClass) {
   console.log(el);
   let classList = [...el.classList];
 
