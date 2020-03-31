@@ -1,50 +1,57 @@
-let withStateElements = document.querySelectorAll('[data-neu-click]');
+const NeuAxentix = (() => {
+  const withStateElements = document.querySelectorAll('[data-neu-click]');
 
-setup(withStateElements);
+  /**
+   * Setup neu-click elements
+   */
+  function setup() {
+    withStateElements.forEach(el => {
+      let classList = el.className.split(' ');
 
-/**
- *
- * @param {NodeListOf<Element>} withStateElements
- */
-function setup(withStateElements) {
-  withStateElements.forEach(el => {
-    let classList = el.className.split(' ');
+      const stateList = ['neu-bordered', 'neu-flat', 'neu-pressed', 'neu-concave', 'neu-convex'];
 
+      const neumorphClasses = classList.filter(className => stateList.includes(className));
+      if (neumorphClasses.length >= 2) {
+        const newClasses = classList.filter(className => !neumorphClasses.includes(className));
+        newClasses.push(neumorphClasses[0]);
+        el.className = newClasses.join(' ');
+      }
+
+      el.neuClickCurrClass = neumorphClasses[0] || '';
+      el.toggleRef = _toggle.bind(el);
+
+      el.addEventListener('click', el.toggleRef);
+    });
+  }
+
+  /**
+   * Toggle neu-click state
+   */
+  function _toggle() {
     const stateList = ['neu-bordered', 'neu-flat', 'neu-pressed', 'neu-concave', 'neu-convex'];
-
-    const neumorphClasses = classList.filter(className => stateList.includes(className));
-    if (neumorphClasses.length >= 2) {
-      const newClasses = classList.filter(className => !neumorphClasses.includes(className));
-      newClasses.push(neumorphClasses[0]);
-      el.className = newClasses.join(' ');
+    if (this.dataset.neuClick && !stateList.includes(this.dataset.neuClick)) {
+      console.error('Error: invalid classname in data-neu-click.');
+      return;
     }
 
-    el.neuClickCurrClass = neumorphClasses[0] || '';
-    el.toggleRef = toggleType.bind(el);
+    const nextClass = this.dataset.neuClick;
+    if (this.neuClickCurrClass) {
+      this.classList.remove(this.neuClickCurrClass);
+      this.dataset.neuClick = this.neuClickCurrClass;
+    } else {
+      this.dataset.neuClick = '';
+    }
 
-    el.addEventListener('click', el.toggleRef);
-  });
-}
-
-function toggleType() {
-  const stateList = ['neu-bordered', 'neu-flat', 'neu-pressed', 'neu-concave', 'neu-convex'];
-  if (this.dataset.neuClick && !stateList.includes(this.dataset.neuClick)) {
-    console.error('Error: invalid classname in data-neu-click.');
-    return;
+    if (nextClass) {
+      this.classList.add(nextClass);
+      this.neuClickCurrClass = nextClass;
+    } else {
+      this.neuClickCurrClass = '';
+    }
   }
 
-  const nextClass = this.dataset.neuClick;
-  if (this.neuClickCurrClass) {
-    this.classList.remove(this.neuClickCurrClass);
-    this.dataset.neuClick = this.neuClickCurrClass;
-  } else {
-    this.dataset.neuClick = '';
-  }
-
-  if (nextClass) {
-    this.classList.add(nextClass);
-    this.neuClickCurrClass = nextClass;
-  } else {
-    this.neuClickCurrClass = '';
-  }
-}
+  return {
+    setup
+  };
+})();
+NeuAxentix.setup();
