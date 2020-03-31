@@ -1,4 +1,4 @@
-let withStateElements = document.querySelectorAll('[data-neu-clicked]');
+let withStateElements = document.querySelectorAll('[data-neu-click]');
 
 setup(withStateElements);
 
@@ -27,17 +27,29 @@ function setup(withStateElements) {
 
 function toggleType() {
   console.log(this);
+  const stateList = ['neu-bordered', 'neu-flat', 'neu-pressed', 'neu-concave', 'neu-convex'];
   let classList = [...this.classList];
 
-  if (this.classList.contains(this.dataset.neuClicked)) {
-    let index = classList.indexOf(this.dataset.off);
-    classList.splice(index, 1, this.dataset.neuClicked);
-    console.log('11111');
+  // if he doesn't contain the "dataset" class in his classList, but contains another neumorph class
+  // 2dn = undefined so falsy if "find()" doesn't find corresponding value
+  if (
+    !this.classList.contains(this.dataset.neuClick) &&
+    this.classList.contains(stateList.find(any => classList.some(className => any == className)))
+  ) {
+    let newClassName = classList.filter(className => stateList.includes(className)); // future dataset class
+
+    let index = classList.indexOf(newClassName);
+    classList.splice(index, 1, this.dataset.neuClick);
+    this.className = classList.join(' ');
+    this.dataset.neuClick = newClassName;
+    // else if there is no neumorph class on the element
+  } else if (!this.classList.contains(stateList.find(any => classList.some(className => any == className)))) {
+    let newClassName = 'no-basic-value'; // future dataset class
+
+    classList.push(this.dataset.neuClick);
+    this.className = classList.join(' ');
+    this.dataset.neuClick = newClassName;
   }
 
-  console.log(classList);
-  // this.className = '';
-  // classList.forEach(className => {
-  //   this.classList.add(className);
-  // });
+  // console.log(classList);
 }
