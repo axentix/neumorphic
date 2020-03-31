@@ -1,4 +1,4 @@
-let withStateElements = document.querySelectorAll('[data-on]');
+let withStateElements = document.querySelectorAll('[data-neu-clicked]');
 
 setupClasses(withStateElements);
 setupListeners(withStateElements);
@@ -38,9 +38,9 @@ function toggleType(el) {
   console.log(el);
   let classList = [...el.classList];
 
-  if (el.classList.contains(el.dataset.on)) {
+  if (el.classList.contains(el.dataset.neuClicked)) {
     let index = classList.indexOf(el.dataset.off);
-    classList.splice(index, 1, 'neu-' + el.dataset.on);
+    classList.splice(index, 1, el.dataset.neuClicked);
     console.log('11111');
   } else if (el.classList.contains('neu-' + el.dataset.on)) {
   }
