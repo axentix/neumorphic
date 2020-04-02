@@ -13,8 +13,9 @@ $firstColor: #000;
       $variant: 'darken';
       $value: darken($value, 3%);
     }
-    // FAIRE LES VARIANTS DE BACKGROUNDS
-    // je fais un darken qui prend la nouvelle value, réinit la value avant
+
+    @include generate-background($i, $name, $value, $variant);
+
     .neu-#{$name} {
       @if $i == 1 {
         background-color: $firstColor;

@@ -13,6 +13,23 @@
   }
 }
 
+@mixin generate-background($i, $name, $value, $variant) {
+  @if $i == 1 {
+    .neu-bg-#{$name} {
+      color: txtColor($value);
+      background-color: $value;
+    }
+  } @else if $i >= 2 {
+    .neu-bg-#{$name},
+    .neu-#{$name} {
+      &.neu-bg-#{$variant} {
+        color: txtColor($value);
+        background-color: $value;
+      }
+    }
+  }
+}
+
 @mixin generate-flat($i, $value, $variant) {
   @if $i == 1 {
     .neu-flat {
