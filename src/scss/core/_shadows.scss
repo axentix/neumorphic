@@ -32,15 +32,7 @@ $firstColor: #000;
         }
       }
 
-      @include generate-flat($i, $value, $variant);
-
-      @include generate-pressed($i, $value, $variant);
-
-      @include generate-convex($i, $value, $variant);
-
-      @include generate-concave($i, $value, $variant);
-
-      @include generate-bordered($i, $value, $variant);
+      @include generate-shadows($i, $value, $variant);
     }
     @if $i == 2 {
       $value: $firstColor;
