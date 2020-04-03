@@ -33,155 +33,120 @@
 @mixin generate-shadows($i, $value, $variant) {
   @if $i == 1 {
     .neu-flat {
-      background-color: $value;
-      box-shadow: 5px 5px 10px darken($value, 8%), -5px -5px 10px lighten($value, 8%);
-
-      &.neu-small {
-        box-shadow: 2px 2px 10px darken($value, 12.5%), -2px -2px 10px lighten($value, 10%);
-      }
-
-      &.neu-large {
-        box-shadow: 12px 12px 24px darken($value, 8%), -12px -12px 24px lighten($value, 8%);
-      }
+      @include flat($value);
     }
     .neu-pressed {
-      background-color: $value;
-      box-shadow: inset 5px 5px 10px darken($value, 8%), inset -5px -5px 10px lighten($value, 6%);
-
-      &.neu-small {
-        box-shadow: inset 2px 2px 10px darken($value, 10%), inset -2px -2px 10px lighten($value, 7%);
-      }
-
-      &.neu-large {
-        box-shadow: inset 8px 8px 20px darken($value, 8%), inset -8px -8px 20px lighten($value, 6%);
-      }
+      @include pressed($value);
     }
     .neu-convex {
-      background: linear-gradient(145deg, lighten($value, 7%), darken($value, 6%));
-      box-shadow: 5px 5px 10px darken($value, 8%), -5px -5px 10px lighten($value, 6%);
-
-      &.neu-small {
-        background: linear-gradient(145deg, lighten($value, 7%), darken($value, 6%));
-        box-shadow: 2px 2px 10px darken($value, 10%), -2px -2px 10px lighten($value, 7%);
-      }
-
-      &.neu-large {
-        background: linear-gradient(145deg, lighten($value, 7%), darken($value, 6%));
-        box-shadow: 8px 8px 16px darken($value, 8%), -8px -8px 16px lighten($value, 7%);
-      }
+      @include convex($value);
     }
     .neu-concave {
-      background: linear-gradient(145deg, darken($value, 6%), lighten($value, 6%));
-      box-shadow: 5px 5px 10px darken($value, 8%), -5px -5px 10px lighten($value, 6%);
-
-      &.neu-small {
-        background: linear-gradient(145deg, darken($value, 6%), lighten($value, 6%));
-        box-shadow: 2px 2px 10px darken($value, 10%), -2px -2px 10px lighten($value, 7%);
-      }
-
-      &.neu-large {
-        background: linear-gradient(145deg, darken($value, 6%), lighten($value, 6%));
-        box-shadow: 8px 8px 14px darken($value, 8%), -8px -8px 14px lighten($value, 7%);
-      }
+      @include concave($value);
     }
     .neu-bordered {
-      background-color: $value;
-      border: solid 2px transparent;
-      box-shadow: inset 5px 5px 10px darken($value, 8%), inset -5px -5px 10px lighten($value, 6%),
-        5px 5px 10px darken($value, 8%), -5px -5px 10px lighten($value, 6%);
-
-      &.neu-small {
-        border: solid thin transparent;
-        box-shadow: inset 2px 2px 10px darken($value, 10%), inset -2px -2px 10px lighten($value, 7%),
-          2px 2px 10px darken($value, 10%), -2px -2px 10px lighten($value, 7%);
-      }
-
-      &.neu-large {
-        border: solid 4px transparent;
-        box-shadow: inset 8px 8px 20px darken($value, 8%), inset -8px -8px 20px lighten($value, 7%),
-          8px 8px 20px darken($value, 8%), -8px -8px 20px lighten($value, 7%);
-      }
+      @include bordered($value);
     }
   } @else if $i >= 2 {
     .neu-flat {
       &.neu-#{$variant} {
-        background-color: $value;
-        box-shadow: 5px 5px 10px darken($value, 8%), -5px -5px 10px lighten($value, 8%);
-
-        &.neu-small {
-          box-shadow: 2px 2px 10px darken($value, 12.5%), -2px -2px 10px lighten($value, 10%);
-        }
-
-        &.neu-large {
-          box-shadow: 12px 12px 24px darken($value, 8%), -12px -12px 24px lighten($value, 8%);
-        }
+        @include flat($value);
       }
     }
     .neu-pressed {
       &.neu-#{$variant} {
-        background-color: $value;
-        box-shadow: inset 5px 5px 10px darken($value, 8%), inset -5px -5px 10px lighten($value, 6%);
-
-        &.neu-small {
-          box-shadow: inset 2px 2px 10px darken($value, 10%), inset -2px -2px 10px lighten($value, 7%);
-        }
-
-        &.neu-large {
-          box-shadow: inset 8px 8px 20px darken($value, 8%), inset -8px -8px 20px lighten($value, 6%);
-        }
+        @include pressed($value);
       }
     }
     .neu-convex {
       &.neu-#{$variant} {
-        background: linear-gradient(145deg, lighten($value, 7%), darken($value, 6%));
-        box-shadow: 5px 5px 10px darken($value, 8%), -5px -5px 10px lighten($value, 6%);
-
-        &.neu-small {
-          background: linear-gradient(145deg, lighten($value, 7%), darken($value, 6%));
-          box-shadow: 2px 2px 10px darken($value, 10%), -2px -2px 10px lighten($value, 7%);
-        }
-
-        &.neu-large {
-          background: linear-gradient(145deg, lighten($value, 7%), darken($value, 6%));
-          box-shadow: 8px 8px 16px darken($value, 8%), -8px -8px 16px lighten($value, 7%);
-        }
+        @include convex($value);
       }
     }
     .neu-concave {
       &.neu-#{$variant} {
-        background: linear-gradient(145deg, darken($value, 6%), lighten($value, 6%));
-        box-shadow: 5px 5px 10px darken($value, 8%), -5px -5px 10px lighten($value, 6%);
-
-        &.neu-small {
-          background: linear-gradient(145deg, darken($value, 6%), lighten($value, 6%));
-          box-shadow: 2px 2px 10px darken($value, 10%), -2px -2px 10px lighten($value, 7%);
-        }
-
-        &.neu-large {
-          background: linear-gradient(145deg, darken($value, 6%), lighten($value, 6%));
-          box-shadow: 8px 8px 14px darken($value, 8%), -8px -8px 14px lighten($value, 7%);
-        }
+        @include concave($value);
       }
     }
     .neu-bordered {
       &.neu-#{$variant} {
-        background-color: $value;
-        border: solid 2px transparent;
-        box-shadow: inset 5px 5px 10px darken($value, 8%), inset -5px -5px 10px lighten($value, 6%),
-          5px 5px 10px darken($value, 8%), -5px -5px 10px lighten($value, 6%);
-
-        &.neu-small {
-          border: solid thin transparent;
-          box-shadow: inset 2px 2px 10px darken($value, 10%), inset -2px -2px 10px lighten($value, 7%),
-            2px 2px 10px darken($value, 10%), -2px -2px 10px lighten($value, 7%);
-        }
-
-        &.neu-large {
-          border: solid 4px transparent;
-          box-shadow: inset 8px 8px 20px darken($value, 8%), inset -8px -8px 20px lighten($value, 7%),
-            8px 8px 20px darken($value, 8%), -8px -8px 20px lighten($value, 7%);
-        }
+        @include bordered($value);
       }
     }
+  }
+}
+
+@mixin flat($value) {
+  background-color: $value;
+  box-shadow: 5px 5px 10px darken($value, 8%), -5px -5px 10px lighten($value, 8%);
+
+  &.neu-small {
+    box-shadow: 2px 2px 10px darken($value, 12.5%), -2px -2px 10px lighten($value, 10%);
+  }
+
+  &.neu-large {
+    box-shadow: 12px 12px 24px darken($value, 8%), -12px -12px 24px lighten($value, 8%);
+  }
+}
+
+@mixin pressed($value) {
+  background-color: $value;
+  box-shadow: inset 5px 5px 10px darken($value, 8%), inset -5px -5px 10px lighten($value, 6%);
+
+  &.neu-small {
+    box-shadow: inset 2px 2px 10px darken($value, 10%), inset -2px -2px 10px lighten($value, 7%);
+  }
+
+  &.neu-large {
+    box-shadow: inset 8px 8px 20px darken($value, 8%), inset -8px -8px 20px lighten($value, 6%);
+  }
+}
+
+@mixin convex($value) {
+  background: linear-gradient(145deg, lighten($value, 7%), darken($value, 6%));
+  box-shadow: 5px 5px 10px darken($value, 8%), -5px -5px 10px lighten($value, 6%);
+
+  &.neu-small {
+    background: linear-gradient(145deg, lighten($value, 7%), darken($value, 6%));
+    box-shadow: 2px 2px 10px darken($value, 10%), -2px -2px 10px lighten($value, 7%);
+  }
+
+  &.neu-large {
+    background: linear-gradient(145deg, lighten($value, 7%), darken($value, 6%));
+    box-shadow: 8px 8px 16px darken($value, 8%), -8px -8px 16px lighten($value, 7%);
+  }
+}
+
+@mixin concave($value) {
+  background: linear-gradient(145deg, darken($value, 6%), lighten($value, 6%));
+  box-shadow: 5px 5px 10px darken($value, 8%), -5px -5px 10px lighten($value, 6%);
+
+  &.neu-small {
+    background: linear-gradient(145deg, darken($value, 6%), lighten($value, 6%));
+    box-shadow: 2px 2px 10px darken($value, 10%), -2px -2px 10px lighten($value, 7%);
+  }
+
+  &.neu-large {
+    background: linear-gradient(145deg, darken($value, 6%), lighten($value, 6%));
+    box-shadow: 8px 8px 14px darken($value, 8%), -8px -8px 14px lighten($value, 7%);
+  }
+}
+
+@mixin bordered($value) {
+  background-color: $value;
+  border: solid 2px transparent;
+  box-shadow: inset 5px 5px 10px darken($value, 8%), inset -5px -5px 10px lighten($value, 6%),
+    5px 5px 10px darken($value, 8%), -5px -5px 10px lighten($value, 6%);
+
+  &.neu-small {
+    border: solid thin transparent;
+    box-shadow: inset 2px 2px 10px darken($value, 10%), inset -2px -2px 10px lighten($value, 7%),
+      2px 2px 10px darken($value, 10%), -2px -2px 10px lighten($value, 7%);
+  }
+
+  &.neu-large {
+    border: solid 4px transparent;
+    box-shadow: inset 8px 8px 20px darken($value, 8%), inset -8px -8px 20px lighten($value, 7%),
+      8px 8px 20px darken($value, 8%), -8px -8px 20px lighten($value, 7%);
   }
 }
