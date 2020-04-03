@@ -6,6 +6,7 @@ $firstColor: #000;
     @if $i == 1 {
       $firstColor: $value;
     }
+
     @if $i == 2 {
       $variant: 'lighten';
       $value: lighten($value, 3%);
@@ -20,9 +21,11 @@ $firstColor: #000;
       @if $i == 1 {
         background-color: $firstColor;
         color: txtColor($firstColor);
+
         .btn {
           color: txtColor($firstColor);
         }
+
         .btn:hover {
           @if txtColor($firstColor) == #fff {
             filter: brightness(115%);
@@ -34,6 +37,7 @@ $firstColor: #000;
 
       @include generate-shadows($i, $value, $variant);
     }
+
     @if $i == 2 {
       $value: $firstColor;
     }

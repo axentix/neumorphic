@@ -35,15 +35,19 @@
     .neu-flat {
       @include flat($value);
     }
+
     .neu-pressed {
       @include pressed($value);
     }
+
     .neu-convex {
       @include convex($value);
     }
+
     .neu-concave {
       @include concave($value);
     }
+
     .neu-bordered {
       @include bordered($value);
     }
@@ -53,11 +57,13 @@
         @include flat($value);
       }
     }
+
     .neu-pressed {
       &.neu-#{$variant} {
         @include pressed($value);
       }
     }
+
     .neu-convex {
       &.neu-#{$variant} {
         @include convex($value);
@@ -68,6 +74,7 @@
         @include concave($value);
       }
     }
+
     .neu-bordered {
       &.neu-#{$variant} {
         @include bordered($value);
