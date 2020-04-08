@@ -7,7 +7,7 @@ $breakpoints: (
   'sm': 'screen and (min-width: 600px) and (max-width: 959px)',
   'md': 'screen and (min-width: 960px) and (max-width: 1279px)',
   'lg': 'screen and (min-width: 1280px) and (max-width: 1919px)',
-  'xl': 'screen and (min-width: 1920px)'
+  'xl': 'screen and (min-width: 1920px)',
 ) !default;
 
 $extra-breakpoints: (
@@ -16,7 +16,7 @@ $extra-breakpoints: (
   'lg-down': 'screen and (max-width: 1919px)',
   'sm-up': 'screen and (min-width: 600px)',
   'md-up': 'screen and (min-width: 960px)',
-  'lg-up': 'screen and (min-width: 1280px)'
+  'lg-up': 'screen and (min-width: 1280px)',
 ) !default;
 
 // Colors
@@ -33,7 +33,7 @@ $colors: (
   'amaranth': #e62454,
   'airforce': #658fa3,
   'meadow': #22e684,
-  'grey': #a5a5a5
+  'grey': #a5a5a5,
 ) !default;
 
 $axentix-palette: (
@@ -44,10 +44,10 @@ $axentix-palette: (
   'error': #df2c29,
   'white': #fff,
   'black': #000,
-  'transparent': transparent
+  'transparent': transparent,
 ) !default;
 
 $theme-colors: (
   'light': #e5e5e5,
-  'dark': #222
+  'dark': #222,
 ) !default;

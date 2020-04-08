@@ -17,7 +17,8 @@ $firstColor: #000;
 
     @include generate-background($i, $name, $value, $variant);
 
-    .neu-#{$name} {
+    .neu-#{$name},
+    [class*='neu-'] .neu-#{$name} {
       @if $i == 1 {
         background-color: $firstColor;
         color: txtColor($firstColor);
@@ -28,7 +29,7 @@ $firstColor: #000;
 
         .btn:hover {
           @if txtColor($firstColor) == #fff {
-            filter: brightness(115%);
+            filter: brightness(105%);
           } @else if txtColor($firstColor) == #000 {
             filter: brightness(95%);
           }
