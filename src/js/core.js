@@ -7,10 +7,29 @@ const NeuAxentix = (() => {
   /**
    * Toggle neu-clicked state
    */
-  function _toggle(datasetName) {
+  function _toggle(datasetName, e) {
     if (this.dataset[datasetName] && !stateList.includes(this.dataset[datasetName])) {
       console.error('Error: invalid classname in data-neu-...');
       return;
+    }
+
+    if (datasetName === 'neuClick') {
+      if (this.neuActive) {
+        if (e.type === 'mousedown' || e.type === 'touchstart') {
+          return;
+        }
+        this.neuActive = false;
+      } else {
+        if (
+          e.type === 'mouseup' ||
+          e.type === 'mouseleave' ||
+          e.type === 'touchend' ||
+          e.type === 'touchmove'
+        ) {
+          return;
+        }
+        this.neuActive = true;
+      }
     }
 
     const nextClass = this.dataset[datasetName];
@@ -35,9 +54,9 @@ const NeuAxentix = (() => {
   function _setupClasses(el) {
     let classList = el.className.split(' ');
 
-    const neumorphClasses = classList.filter(className => stateList.includes(className));
+    const neumorphClasses = classList.filter((className) => stateList.includes(className));
     if (neumorphClasses.length >= 2) {
-      const newClasses = classList.filter(className => !neumorphClasses.includes(className));
+      const newClasses = classList.filter((className) => !neumorphClasses.includes(className));
       newClasses.push(neumorphClasses[0]);
       el.className = newClasses.join(' ');
     }
@@ -49,22 +68,28 @@ const NeuAxentix = (() => {
    * Setup neu-click elements
    */
   function setup() {
-    neuClickedElements.forEach(el => {
+    neuClickedElements.forEach((el) => {
       _setupClasses(el);
       el.toggleRef = _toggle.bind(el, 'neuClicked');
 
       el.addEventListener('click', el.toggleRef);
     });
 
-    neuClickElements.forEach(el => {
+    neuClickElements.forEach((el) => {
       _setupClasses(el);
       el.toggleRef = _toggle.bind(el, 'neuClick');
 
       el.addEventListener('mousedown', el.toggleRef);
+      el.addEventListener('mouseleave', el.toggleRef);
       el.addEventListener('mouseup', el.toggleRef);
+
+      if ('ontouchstart' in document.documentElement) {
+        el.addEventListener('touchstart', el.toggleRef);
+        el.addEventListener('touchend', el.toggleRef);
+      }
     });
 
-    neuFocusElements.forEach(el => {
+    neuFocusElements.forEach((el) => {
       _setupClasses(el);
       el.toggleRef = _toggle.bind(el, 'neuFocus');
 
@@ -74,7 +99,7 @@ const NeuAxentix = (() => {
   }
 
   return {
-    setup
+    setup,
   };
 })();
 
