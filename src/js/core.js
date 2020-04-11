@@ -2,6 +2,7 @@ const NeuAxentix = (() => {
   const neuClickElements = document.querySelectorAll('[data-neu-click]');
   const neuFocusElements = document.querySelectorAll('[data-neu-focus]');
   const neuClickedElements = document.querySelectorAll('[data-neu-clicked]');
+  const neuHoverElements = document.querySelectorAll('[data-neu-hover]');
   const stateList = ['neu-bordered', 'neu-flat', 'neu-pressed', 'neu-concave', 'neu-convex'];
 
   /**
@@ -95,6 +96,14 @@ const NeuAxentix = (() => {
 
       el.addEventListener('focus', el.toggleRef);
       el.addEventListener('blur', el.toggleRef);
+    });
+
+    neuHoverElements.forEach((el) => {
+      _setupClasses(el);
+      el.toggleRef = _toggle.bind(el, 'neuHover');
+
+      el.addEventListener('mouseenter', el.toggleRef);
+      el.addEventListener('mouseleave', el.toggleRef);
     });
   }
 
