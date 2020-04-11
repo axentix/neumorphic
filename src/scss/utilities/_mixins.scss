@@ -13,6 +13,34 @@
   }
 }
 
+@mixin fix-buttons($i, $value, $variant) {
+  [class*='neu-'].btn {
+    @if ($i == 1) {
+      color: txtColor($value);
+
+      &:hover {
+        @if txtColor($value) == #fff {
+          filter: brightness(105%);
+        } @else if txtColor($value) == #000 {
+          filter: brightness(95%);
+        }
+      }
+    } @else if ($i >= 2) {
+      &.neu-#{$variant} {
+        color: txtColor($value);
+
+        &:hover {
+          @if txtColor($value) == #fff {
+            filter: brightness(105%);
+          } @else if txtColor($value) == #000 {
+            filter: brightness(95%);
+          }
+        }
+      }
+    }
+  }
+}
+
 @mixin generate-background($i, $name, $value, $variant) {
   @if $i == 1 {
     .neu-bg-#{$name} {

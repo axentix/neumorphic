@@ -19,21 +19,11 @@ $firstColor: #000;
 
     .neu-#{$name},
     [class*='neu-'] .neu-#{$name} {
+      @include fix-buttons($i, $value, $variant);
+
       @if $i == 1 {
         background-color: $firstColor;
         color: txtColor($firstColor);
-
-        .btn {
-          color: txtColor($firstColor);
-        }
-
-        .btn:hover {
-          @if txtColor($firstColor) == #fff {
-            filter: brightness(105%);
-          } @else if txtColor($firstColor) == #000 {
-            filter: brightness(95%);
-          }
-        }
       }
 
       @include generate-shadows($i, $value, $variant);
