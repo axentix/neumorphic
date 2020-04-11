@@ -3,7 +3,8 @@
   <head>
     <title>Axentix Layout - Fixed sidenav</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../dist/css/axentix.min.css" />
+    <link rel="stylesheet" href="../node_modules/axentix/dist/css/axentix.min.css" />
+    <link rel="stylesheet" href="../dist/css/neu-axentix.min.css" />
     <style>
       .form-material .form-field:not(.form-default) {
         --form-material-color: #c91d34;
@@ -46,7 +47,7 @@
       <button data-target="example-sidenav" class="btn press amaranth dark-1 sidenav-trigger">
         Open sidenav
       </button>
-      <form class="container form-material">
+      <form class="container form-material neu-light">
         <div class="grix xs1 sm2">
           <div class="form-field form-rtl">
             <input type="text" id="name" class="form-control" />
@@ -79,7 +80,7 @@
           </div>
           <div class="form-field inline form-default">
             <label for="inline2">inline2</label>
-            <input type="text" id="inline2" class="form-control" />
+            <input type="text" id="inline2" data-neu-focus="neu-bordered" class="form-control neu-concave" />
           </div>
           <div class="form-field">
             <label class="form-check">
@@ -197,7 +198,9 @@
     <footer class="footer primary">
       Copyright © 2019 - Example
     </footer>
-    <script src="../dist/js/axentix.min.js"></script>
+
+    <script src="../node_modules/axentix/dist/js/axentix.min.js"></script>
+    <script src="../dist/js/neu-axentix.min.js"></script>
     <script>
       var sidenav = new Sidenav('#example-sidenav');
     </script>
