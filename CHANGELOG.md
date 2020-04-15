@@ -1,8 +1,7 @@
 # 1.0.0 - 2020-04-15
 
 - ADDED
-  - All neu-axentix framework ;)
-  - Neumorphic shadows (all 5 types)
+  - Shadows based on neumorphism (5 types : flat, convex, concave, pressed, bordered)
   - 2 default themes (light & dark)
   - Compatibility with Axentix
 - REMOVED
