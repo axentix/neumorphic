@@ -13,6 +13,32 @@
   }
 }
 
+@mixin fix-pagination($i, $value, $variant) {
+  .pagination {
+    li[class*='neu-'] {
+      @if ($i == 1) {
+        &:hover {
+          @if txtColor($value) == #fff {
+            filter: brightness($brightness-pos);
+          } @else if txtColor($value) == #000 {
+            filter: brightness($brightness-neg);
+          }
+        }
+      } @else if ($i >= 2) {
+        &.neu-#{$variant} {
+          &:hover {
+            @if txtColor($value) == #fff {
+              filter: brightness($brightness-pos);
+            } @else if txtColor($value) == #000 {
+              filter: brightness($brightness-neg);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 @mixin fix-buttons($i, $value, $variant) {
   [class*='neu-'].btn {
     @if ($i == 1) {
@@ -20,9 +46,9 @@
 
       &:hover {
         @if txtColor($value) == #fff {
-          filter: brightness(105%);
+          filter: brightness($brightness-pos);
         } @else if txtColor($value) == #000 {
-          filter: brightness(95%);
+          filter: brightness($brightness-neg);
         }
       }
     } @else if ($i >= 2) {
@@ -31,9 +57,9 @@
 
         &:hover {
           @if txtColor($value) == #fff {
-            filter: brightness(105%);
+            filter: brightness($brightness-pos);
           } @else if txtColor($value) == #000 {
-            filter: brightness(95%);
+            filter: brightness($brightness-neg);
           }
         }
       }
