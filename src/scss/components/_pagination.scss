@@ -1,0 +1,9 @@
+.pagination {
+  li[class*='neu-'] {
+    transition-property: background-color, color, filter;
+
+    &:hover {
+      background-color: inherit;
+    }
+  }
+}
