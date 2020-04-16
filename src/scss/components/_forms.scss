@@ -1,0 +1,9 @@
+[class*='neu-'] {
+  &.form-control {
+    transition: unset;
+
+    &:not(.neu-bordered) {
+      border: 0;
+    }
+  }
+}

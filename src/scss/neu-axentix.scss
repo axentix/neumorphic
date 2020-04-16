@@ -1,4 +1,4 @@
-/*! Axentix Framework | Developed by Axel SIMONET & Vincent LEVEQUE with ♥ | MIT License */
+/*! Neu-Axentix Framework | Developed by Axel SIMONET & Vincent LEVEQUE with ♥ | MIT License */
 
 /*** Imports ***/
 
@@ -10,5 +10,8 @@
 @import './core/shadows';
 
 // Components
-@import './components/utilities';
-@import './components/card';
+@import './components/forms';
+@import './components/navbar';
+@import './components/sidenav';
+@import './components/dropdown';
+@import './components/pagination';
