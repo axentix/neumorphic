@@ -2,8 +2,12 @@
   li[class*='neu-'] {
     transition-property: background-color, color, filter;
 
-    &:hover {
+    &:hover:not(.disabled) {
       background-color: inherit;
+    }
+
+    &.disabled {
+      box-shadow: none;
     }
   }
 }

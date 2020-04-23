@@ -1,3 +1,13 @@
+# 1.0.1 - 2020-04-23
+
+- ADDED
+  - `reset()` method
+- REMOVED
+- IMPROVED
+- BUGFIXES
+  - Init of js features
+  - Pagination disabled state
+
 # 1.0.0 - 2020-04-16
 
 - ADDED
