@@ -24,6 +24,14 @@
             filter: brightness($brightness-neg);
           }
         }
+
+        &.disabled {
+          @if txtColor($value) == #fff {
+            filter: brightness(120%);
+          } @else if txtColor($value) == #000 {
+            filter: brightness(80%);
+          }
+        }
       } @else if ($i >= 2) {
         &.neu-#{$variant} {
           &:hover {
@@ -31,6 +39,14 @@
               filter: brightness($brightness-pos);
             } @else if txtColor($value) == #000 {
               filter: brightness($brightness-neg);
+            }
+          }
+
+          &.disabled {
+            @if txtColor($value) == #fff {
+              filter: brightness(120%);
+            } @else if txtColor($value) == #000 {
+              filter: brightness(80%);
             }
           }
         }

@@ -1,8 +1,5 @@
 const NeuAxentix = (() => {
-  const neuClickElements = document.querySelectorAll('[data-neu-click]');
-  const neuFocusElements = document.querySelectorAll('[data-neu-focus]');
-  const neuClickedElements = document.querySelectorAll('[data-neu-clicked]');
-  const neuHoverElements = document.querySelectorAll('[data-neu-hover]');
+  let neuClickElements, neuFocusElements, neuClickedElements, neuHoverElements;
   const stateList = ['neu-bordered', 'neu-flat', 'neu-pressed', 'neu-concave', 'neu-convex'];
 
   /**
@@ -69,6 +66,11 @@ const NeuAxentix = (() => {
    * Setup neu-click elements
    */
   function setup() {
+    neuClickElements = document.querySelectorAll('[data-neu-click]');
+    neuFocusElements = document.querySelectorAll('[data-neu-focus]');
+    neuClickedElements = document.querySelectorAll('[data-neu-clicked]');
+    neuHoverElements = document.querySelectorAll('[data-neu-hover]');
+
     neuClickedElements.forEach((el) => {
       _setupClasses(el);
       el.toggleRef = _toggle.bind(el, 'neuClicked');
@@ -107,9 +109,54 @@ const NeuAxentix = (() => {
     });
   }
 
+  /**
+   * Reset all listeners & setup
+   */
+  function reset() {
+    if (neuClickedElements) {
+      neuClickedElements.forEach((el) => {
+        el.removeEventListener('click', el.toggleRef);
+        el.toggleRef = undefined;
+      });
+    }
+
+    if (neuClickElements) {
+      neuClickElements.forEach((el) => {
+        el.removeEventListener('mousedown', el.toggleRef);
+        el.removeEventListener('mouseleave', el.toggleRef);
+        el.removeEventListener('mouseup', el.toggleRef);
+
+        if ('ontouchstart' in document.documentElement) {
+          el.removeEventListener('touchstart', el.toggleRef);
+          el.removeEventListener('touchend', el.toggleRef);
+        }
+        el.toggleRef = undefined;
+      });
+    }
+
+    if (neuFocusElements) {
+      neuFocusElements.forEach((el) => {
+        el.removeEventListener('focus', el.toggleRef);
+        el.removeEventListener('blur', el.toggleRef);
+        el.toggleRef = undefined;
+      });
+    }
+
+    if (neuHoverElements) {
+      neuHoverElements.forEach((el) => {
+        el.removeEventListener('mouseenter', el.toggleRef);
+        el.removeEventListener('mouseleave', el.toggleRef);
+        el.toggleRef = undefined;
+      });
+    }
+
+    setup();
+  }
+
   return {
     setup,
+    reset,
   };
 })();
 
-NeuAxentix.setup();
+document.addEventListener('DOMContentLoaded', NeuAxentix.setup);
