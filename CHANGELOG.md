@@ -1,3 +1,11 @@
+# 1.1.0 - Under development
+
+- ADDED
+  - Update Axentix to 1.0.0-beta.0
+- REMOVED
+- IMPROVED
+- BUGFIXES
+
 # 1.0.1 - 2020-04-23
 
 - ADDED
