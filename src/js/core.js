@@ -30,6 +30,16 @@ const NeuAxentix = (() => {
       }
     }
 
+    if (datasetName === 'neuHover') {
+      if (!this.neuActive && e.type === 'mouseenter') {
+        this.neuActive = true;
+      } else if (!this.neuActive && e.type === 'mouseleave') {
+        return;
+      } else if (this.neuActive && e.type === 'mouseleave') {
+        this.neuActive = false;
+      }
+    }
+
     const nextClass = this.dataset[datasetName];
     if (this.neuCurrClass) {
       this.classList.remove(this.neuCurrClass);
