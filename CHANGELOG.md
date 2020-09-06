@@ -1,3 +1,13 @@
+# 1.1.0 - 2020-09-06
+
+- ADDED
+- REMOVED
+- IMPROVED
+  - Update Axentix to 1.0.0-beta.2
+  - Update dependencies
+- BUGFIXES
+  - `data-neu-hover` change state at startup
+
 # 1.0.1 - 2020-04-23
 
 - ADDED
