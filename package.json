@@ -60,6 +60,6 @@
     "sass": "^1.26.10"
   },
   "dependencies": {
-    "axentix": "^1.0.0-beta.2"
+    "axentix": "^1.0.0-beta.3"
   }
 }
