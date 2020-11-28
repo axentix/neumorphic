@@ -1,3 +1,12 @@
+# 1.3.0 - 2020-11-28
+
+- ADDED
+- REMOVED
+- IMPROVED
+  - Update Axentix to 1.0.0 - https://github.com/axentix/axentix/releases/tag/1.0.0 
+  - Update dependencies
+- BUGFIXES
+
 # 1.2.1 - 2020-11-07
 
 - ADDED
