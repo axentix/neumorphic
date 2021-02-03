@@ -1,3 +1,13 @@
+# 1.4.0 - 2021-02-03
+
+- ADDED
+- REMOVED
+  - Default background-color on body
+- IMPROVED
+  - Update Axentix to 1.1.0 - https://github.com/axentix/axentix/releases/tag/1.1.0 
+  - Update dependencies
+- BUGFIXES
+
 # 1.3.0 - 2020-11-28
 
 - ADDED
