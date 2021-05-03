@@ -1,6 +1,6 @@
 {
   "name": "neu-axentix",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Neu-Axentix is the first front end framework based on neumorphism using CSS and JS. Start creating your website using neumorphic design.",
   "homepage": "https://neu.useaxentix.com",
   "author": "Axel SIMONET, Vincent LEVEQUE",
@@ -46,8 +46,8 @@
   ],
   "engine": "node >= 10",
   "devDependencies": {
-    "@babel/core": "^7.12.13",
-    "@babel/preset-env": "^7.12.13",
+    "@babel/core": "^7.14.0",
+    "@babel/preset-env": "^7.14.0",
     "browser-sync": "^2.26.14",
     "fibers": "^4.0.3",
     "gulp": "^4.0.2",
@@ -57,9 +57,9 @@
     "gulp-concat": "^2.6.1",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.1.0",
-    "sass": "^1.32.6"
+    "sass": "^1.32.12"
   },
   "dependencies": {
-    "axentix": "^1.1.0"
+    "axentix": "^1.2.1"
   }
 }

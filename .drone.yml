@@ -3,7 +3,7 @@ name: neu-axentix new release
 
 steps:
 - name: install
-  image: node:12-alpine
+  image: node:14-alpine
   commands:
   - apk add python make g++
   - npm install
@@ -12,7 +12,7 @@ steps:
       - tag
 
 - name: build
-  image: node:12-alpine
+  image: node:14-alpine
   commands:
   - npm run build
   when:
@@ -20,7 +20,7 @@ steps:
       - tag
 
 - name: make zip folder
-  image: node:12-alpine
+  image: node:14-alpine
   commands:
   - apk add zip
   - cp -R ./dist ./neu-axentix-v${DRONE_TAG}
@@ -53,17 +53,3 @@ steps:
   when:
     event:
       - tag
-
-# - name: send
-#   image: plugins/webhook
-#   settings:
-#     urls: https://neu.useaxentix.com/api/hook
-#     headers:
-#       from_secret: hook_headers
-#     template: |
-#       {
-#         "version": "{{ build.tag }}"
-#       }
-#   when:
-#     event:
-#       - tag
