@@ -1,3 +1,12 @@
+# 1.5.0 - 2021-05-03
+
+- ADDED
+- REMOVED
+- IMPROVED
+  - Update Axentix to 1.2.1 - https://github.com/axentix/axentix/releases/tag/1.2.1 
+  - Update dependencies
+- BUGFIXES
+
 # 1.4.0 - 2021-02-03
 
 - ADDED
