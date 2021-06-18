@@ -1,3 +1,13 @@
+# 1.6.0 - 2021-06-18
+
+- ADDED
+- REMOVED
+- IMPROVED
+  - Update Axentix to 1.3.1 - https://github.com/axentix/axentix/releases/tag/1.3.1
+  - Remove sass deprecation warning
+  - Update dependencies
+- BUGFIXES
+
 # 1.5.0 - 2021-05-03
 
 - ADDED
