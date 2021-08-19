@@ -1,3 +1,12 @@
+# 1.6.1 - 2021-08-19
+
+- ADDED
+- REMOVED
+- IMPROVED
+  - Update Axentix to 1.3.3 - https://github.com/axentix/axentix/releases/tag/1.3.3
+  - Update dependencies
+- BUGFIXES
+
 # 1.6.0 - 2021-06-18
 
 - ADDED
