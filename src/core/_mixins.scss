@@ -6,34 +6,34 @@
     li[class*='neu-'] {
       @if ($i == 1) {
         &:hover {
-          @if txtColor($value) == #fff {
+          @if textColor($value) == #fff {
             filter: brightness($brightness-pos);
-          } @else if txtColor($value) == #000 {
+          } @else if textColor($value) == #000 {
             filter: brightness($brightness-neg);
           }
         }
 
         &.disabled {
-          @if txtColor($value) == #fff {
+          @if textColor($value) == #fff {
             filter: brightness(120%);
-          } @else if txtColor($value) == #000 {
+          } @else if textColor($value) == #000 {
             filter: brightness(80%);
           }
         }
       } @else if ($i >= 2) {
         &.neu-#{$variant} {
           &:hover {
-            @if txtColor($value) == #fff {
+            @if textColor($value) == #fff {
               filter: brightness($brightness-pos);
-            } @else if txtColor($value) == #000 {
+            } @else if textColor($value) == #000 {
               filter: brightness($brightness-neg);
             }
           }
 
           &.disabled {
-            @if txtColor($value) == #fff {
+            @if textColor($value) == #fff {
               filter: brightness(120%);
-            } @else if txtColor($value) == #000 {
+            } @else if textColor($value) == #000 {
               filter: brightness(80%);
             }
           }
@@ -46,23 +46,23 @@
 @mixin fix-buttons($i, $value, $variant) {
   [class*='neu-'].btn {
     @if ($i == 1) {
-      color: txtColor($value);
+      color: textColor($value);
 
       &:hover {
-        @if txtColor($value) == #fff {
+        @if textColor($value) == #fff {
           filter: brightness($brightness-pos);
-        } @else if txtColor($value) == #000 {
+        } @else if textColor($value) == #000 {
           filter: brightness($brightness-neg);
         }
       }
     } @else if ($i >= 2) {
       &.neu-#{$variant} {
-        color: txtColor($value);
+        color: textColor($value);
 
         &:hover {
-          @if txtColor($value) == #fff {
+          @if textColor($value) == #fff {
             filter: brightness($brightness-pos);
-          } @else if txtColor($value) == #000 {
+          } @else if textColor($value) == #000 {
             filter: brightness($brightness-neg);
           }
         }
@@ -74,14 +74,14 @@
 @mixin generate-background($i, $name, $value, $variant) {
   @if $i == 1 {
     .neu-bg-#{$name} {
-      color: txtColor($value);
+      color: textColor($value);
       background-color: $value;
     }
   } @else if $i >= 2 {
     .neu-bg-#{$name},
     .neu-#{$name} {
       &.neu-bg-#{$variant} {
-        color: txtColor($value);
+        color: textColor($value);
         background-color: $value;
       }
     }
