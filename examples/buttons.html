@@ -1,41 +1,14 @@
 <html>
   <head>
-    <title>Axentix Layout - Fixed sidenav</title>
+    <title>Neu-Axentix Button</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
     />
-    <link rel="stylesheet" href="../node_modules/axentix/dist/css/axentix.min.css" />
-    <link rel="stylesheet" href="../dist/css/neu-axentix.min.css" />
   </head>
 
-  <body class="layout with-sidenav fixed-sidenav">
-    <header>
-      <nav class="navbar primary">
-        <a href="#" target="_blank" class="navbar-brand">Axentix</a>
-        <div class="navbar-menu ml-auto">
-          <a class="navbar-link" href="#" class="active">Link</a>
-          <a class="navbar-link" href="#">Link</a>
-          <a class="navbar-link" href="#">Link</a>
-        </div>
-      </nav>
-    </header>
-
-    <div id="example-sidenav" class="sidenav large fixed white">
-      <div class="sidenav-header">
-        <button data-target="example-sidenav" class="sidenav-trigger"><i class="fas fa-times"></i></button>
-        <img class="logo dropshadow-1" src="your_img_path" alt="Logo" />
-      </div>
-      <a href="#" class="sidenav-link active">Link 1</a>
-      <a href="#" class="sidenav-link">Link 2</a>
-      <a href="#" class="sidenav-link">Link 3</a>
-      <a href="#" class="sidenav-link">Link 4</a>
-      <div class="sidenav-footer cyan light-1">
-        This is a footer
-      </div>
-    </div>
-
+  <body class="layout-fixed-sidenav">
     <main class="container">
       <h2>NEUMORPH BUTTONS</h2>
 
@@ -387,13 +360,8 @@
       </h2>
     </main>
 
-    <footer class="footer primary">
-      Copyright © 2019 - Example
-    </footer>
-    <script src="../node_modules/axentix/dist/js/axentix.min.js"></script>
-    <script src="../dist/js/neu-axentix.min.js"></script>
-    <script>
-      var sidenav = new Sidenav('#example-sidenav');
-    </script>
+    <footer class="footer primary">Copyright © 2022 - Example</footer>
+    <script type="module" src="./extra.ts"></script>
+    <script type="module" src="../src/index.ts"></script>
   </body>
 </html>

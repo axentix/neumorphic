@@ -1,0 +1,1 @@
+import './neu-axentix.scss';

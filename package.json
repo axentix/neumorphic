@@ -6,12 +6,15 @@
   "author": "Axel SIMONET, Vincent LEVEQUE",
   "license": "MIT",
   "scripts": {
-    "build:js": "gulp js",
-    "build:js-min": "gulp jsmin",
-    "build:sass-min": "gulp sassmin",
-    "build:sass": "gulp sass",
-    "build": "gulp",
-    "watch": "gulp watch"
+    "dev": "vite --host",
+    "build": "npm run build:main && npm run build:def",
+    "build:main": "vite build",
+    "build:def": "tsc",
+    "generate:examples": "node scripts/generate-examples.js"
+  },
+  "funding": {
+    "type": "buymeacoffee",
+    "url": "https://www.buymeacoffee.com/axentix"
   },
   "keywords": [
     "framework",
@@ -33,33 +36,28 @@
   "bugs": {
     "url": "https://github.com/axentix/neumorphic/issues"
   },
-  "style": "dist/css/neu-axentix.css",
-  "sass": "src/scss/neu-axentix.scss",
-  "main": "dist/js/neu-axentix.js",
+  "style": "./dist/neu-axentix.min.css",
+  "sass": "./src/neu-axentix.scss",
+  "main": "dist/neu-axentix.min.js",
+  "module": "./dist/neu-axentix.esm.js",
+  "typings": "./dist/index.d.ts",
   "files": [
     "dist",
     "src",
-    "gulpfile.js",
     "LICENSE",
     "README",
     "CHANGELOG"
   ],
-  "engine": "node >= 10",
-  "devDependencies": {
-    "@babel/core": "^7.15.0",
-    "@babel/preset-env": "^7.15.0",
-    "browser-sync": "^2.27.5",
-    "fibers": "^4.0.3",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^7.0.1",
-    "gulp-babel": "^8.0.0",
-    "gulp-babel-minify": "^0.5.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.1.1",
-    "sass": "^1.38.0"
-  },
+  "engine": "node >= 12",
   "dependencies": {
-    "axentix": "^1.3.3"
+    "axentix": "^2.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.4",
+    "fast-glob": "^3.2.11",
+    "sass": "^1.49.9",
+    "typescript": "^4.6.3",
+    "vite": "^2.9.0",
+    "vite-plugin-mpa": "^1.1.1"
   }
 }

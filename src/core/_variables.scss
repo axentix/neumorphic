@@ -1,0 +1,10 @@
+/* IMPORTANT : Don't forget to add !default flag to all variables in this file */
+@import 'axentix/src/core/variables';
+
+$theme-colors: (
+  'light': #e5e5e5,
+  'dark': #222,
+) !default;
+
+$brightness-pos: 105% !default;
+$brightness-neg: 95% !default;

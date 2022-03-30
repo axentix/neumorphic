@@ -24,7 +24,7 @@ $firstColor: #000;
 
       @if $i == 1 {
         background-color: $firstColor;
-        color: txtColor($firstColor);
+        color: textColor($firstColor);
       }
 
       @include generate-shadows($i, $value, $variant);
