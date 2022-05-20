@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite';
+import { resolve } from 'path';
 import mpa from 'vite-plugin-mpa';
 import autoprefixer from 'autoprefixer';
 
@@ -36,6 +37,7 @@ export default defineConfig({
       name: 'NeuAxentix',
       formats: ['es', 'umd'],
       fileName: (format) => (format === 'umd' ? `neu-axentix.min.js` : `neu-axentix.esm.js`),
+      entry: resolve(__dirname, `src/index.ts`),
     },
     rollupOptions: {
       output: {
