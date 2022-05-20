@@ -1,3 +1,3 @@
 import './neu-axentix.scss';
 
-import './utilities/core';
+import './utils/core';

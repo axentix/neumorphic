@@ -1,0 +1,43 @@
+---
+name: deploy
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Neu-Axentix
+        run: npm run build
+
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          access: "public"
+
+      - uses: vimtor/action-zip@v1
+        with:
+          files: dist/ LICENSE CHANGELOG.md README.md
+          dest: neu-axentix-${{ steps.get_version.outputs.VERSION }}.zip
+
+      - uses: ncipollo/release-action@v1
+        with:
+          artifacts: "neu-axentix-${{ steps.get_version.outputs.VERSION }}.zip"
+          token: ${{ secrets.GITHUB_TOKEN }}

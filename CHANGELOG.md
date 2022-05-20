@@ -1,3 +1,16 @@
+# 2.0.0 - 2022-05-20
+
+New major version with reworked [docs](https://neu.useaxentix.com/) !
+
+- ADDED
+  - New CI/CD. We have switched from Drone CI to Github Actions.
+  - We have switched from Gulp to new Vite bundler. Our dependencies are much smaller.
+  - New build system.
+- REMOVED
+- IMPROVED
+  - Update Axentix to 2.0.1 - https://github.com/axentix/axentix/releases/tag/2.0.1
+- BUGFIXES
+
 # 1.6.1 - 2021-08-19
 
 - ADDED
