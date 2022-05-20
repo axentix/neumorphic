@@ -4,7 +4,7 @@
   </a>
 </p>
 
-<h3 align="center">Neu-Axentix - The first framework based on neumorphism</h3>
+<h3 align="center">Neu-Axentix - Neumorphism extension of Axentix</h3>
 
 <p align="center">
   <a href="https://neu.useaxentix.com/"><strong>Home</strong></a> |
@@ -14,18 +14,16 @@
 <br>
 
 <p align="center">
-  <a href="https://badge.fury.io/js/neu-axentix">
-    <img src="https://badge.fury.io/js/neu-axentix.svg" alt="npm version" />
+  <a href="https://www.npmjs.com/package/neu-axentix">
+    <img alt="npm" src="https://img.shields.io/npm/v/neu-axentix">
   </a>
-  <img src="https://img.shields.io/github/v/release/axentix/neumorphic" alt="GitHub release (latest by date)" />
+  <a href="https://github.com/axentix/neumorphic/releases">
+    <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/axentix/neumorphic">
+  </a>
   <a href="https://www.jsdelivr.com/package/npm/neu-axentix">
     <img src="https://data.jsdelivr.com/v1/package/npm/neu-axentix/badge?style=rounded" alt="jsDelivr Hits" />
   </a>
-  <img src="https://img.shields.io/david/axentix/neumorphic" alt="Dependencies" />
-  <img src="https://img.shields.io/david/dev/axentix/neumorphic" alt="Dev Dependencies" />
-  <a href="https://packagephobia.com/result?p=neu-axentix">
-    <img src="https://packagephobia.com/badge?p=neu-axentix" alt="install size" />
-  </a>
+  <img alt="npm bundle size (version)" src="https://img.shields.io/bundlephobia/minzip/neu-axentix">
   <a href="https://snyk.io/test/github/axentix/neumorphic?targetFile=package.json">
     <img src="https://snyk.io/test/github/axentix/neumorphic/badge.svg?targetFile=package.json" alt="Known Vulnerabilities" />
   </a>
@@ -41,7 +39,8 @@
   </a>
 </p>
 
-Neu-Axentix is the first front end framework based on neumorphism using CSS and JS. Start creating your website using neumorphic design.
+Neu-Axentix is the framework you need to easily use neumorphism shadows.
+Start creating your website using neumorphic design.
 
 ## Quickstart
 
@@ -66,12 +65,11 @@ You can download the latest release from [Github](https://github.com/axentix/neu
 ```
 git clone https://github.com/axentix/neumorphic.git
 cd neumorphic
-npm install
+npm ci
 ```
 
 After installation you have access to our source files.  
-You can build project with `npm run build` or watch it with `npm run watch`.  
-We use BrowserSync for our development process.
+You can build project with `npm run build` or serve it with `npm run dev`.
 
 ## Documentation
 
@@ -80,6 +78,21 @@ Find the documentation at <https://neu.useaxentix.com/docs/>.
 ## Changelog
 
 Changelog is accessible in the [CHANGELOG.md](CHANGELOG.md) file or in [the release section](https://github.com/axentix/neumorphic/releases).
+
+## Sponsors
+
+Support this project on [BuyMeACoffee](https://www.buymeacoffee.com/axentix) to become a sponsor and get **your logo here and on the docs** with a link to your website.
+
+<div align="center">
+  <a href="https://www.buymeacoffee.com/axentix" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Become a sponsor" height="50" width="180"></a>
+</div>
+
+## Backers
+
+Support this project on [BuyMeACoffee](https://www.buymeacoffee.com/axentix) to become a backer and get **your github profile here**.
+
+[<img src="https://avatars.githubusercontent.com/u/32241342?v=4" width="40" style="border-radius:50%"/>](https://github.com/Xelzs)
+[<img src="https://avatars.githubusercontent.com/u/49057921?v=4" width="40" style="border-radius:50%"/>](https://github.com/Stallos11)
 
 ## Creators
 
