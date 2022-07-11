@@ -1,3 +1,12 @@
+# 2.1.0 - 2022-07-11
+
+- ADDED
+- REMOVED
+- IMPROVED
+  - Update Axentix to 2.1.0 - https://github.com/axentix/axentix/releases/tag/2.1.0
+  - Update dependencies
+- BUGFIXES
+
 # 2.0.0 - 2022-05-20
 
 New major version with reworked [docs](https://neu.useaxentix.com/) !

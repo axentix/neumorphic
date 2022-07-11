@@ -1,6 +1,6 @@
 {
   "name": "neu-axentix",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "The official Axentix neumorphism design implementation. Start using neumorphism shadows in 3 easy steps.",
   "homepage": "https://neu.useaxentix.com",
   "author": "Axel SIMONET, Vincent LEVEQUE",
@@ -50,14 +50,14 @@
   ],
   "engine": "node >= 16",
   "dependencies": {
-    "axentix": "^2.0.1"
+    "axentix": "^2.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.7",
     "fast-glob": "^3.2.11",
-    "sass": "^1.52.0",
-    "typescript": "^4.6.4",
-    "vite": "^2.9.9",
-    "vite-plugin-mpa": "^1.1.2"
+    "sass": "^1.53.0",
+    "typescript": "^4.7.4",
+    "vite": "^2.9.14",
+    "vite-plugin-mpa": "^1.1.3"
   }
 }
